@@ -30,7 +30,7 @@ load_model()
 
 #routes
 
-@app.route('/')
+@app.route('/') #the frontend by html
 def index():
     return render_template('index.html')
 
@@ -60,7 +60,7 @@ def autocomplete():
     return jsonify(suggestions)
 
 
-@app.route('/health')
+@app.route('/health') #as iam deploying on the render , the load-balancers need to know if app is actually running or it it has frozen , they will ping the health endpoint every few seconds. if it returns 200ok, they keep sending user traffic to it .
 def health():
     return jsonify({'status': 'ok', 'books_loaded': len(recommender.df)}), 200
 

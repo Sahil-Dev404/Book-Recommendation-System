@@ -124,10 +124,10 @@ class BookRecommender:
 
         #tf-idf vectorizer
         self.vectorizer=TfidfVectorizer(
-            max_features=15000,
+            max_features=15000,  #limits the vocabulary to top15,000 most important terms
             ngram_range=(1, 2),     # unigrams + bigrams
-            min_df=2,
-            max_df=0.85,
+            min_df=2,     #ignores word that only appear in only 1 book
+            max_df=0.85,  #ignores words appearing in the 85% of books
             sublinear_tf=True       # apply log normalization
         )
         self.tfidf_matrix=self.vectorizer.fit_transform(self.df['features'])
