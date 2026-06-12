@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookLens — NLP Book Recommender</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+
+  <!-- ── Header ─────────────────────────────────────────── -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">📚</span>
+        <span class="logo-text">BookLens</span>
+      </div>
+      <p class="tagline">Content-Based NLP Recommendation Engine</p>
+    </div>
+  </header>
+
+  <!-- ── Search Section ─────────────────────────────────── -->
+  <main class="main">
+    <section class="search-section">
+      <h1 class="search-title">Find Your Next Read</h1>
+      <p class="search-subtitle">
+        Enter a book title and our NLP pipeline will find similar books
+        using <strong>TF-IDF</strong> + <strong>Cosine Similarity</strong>
+      </p>
+
+      <div class="search-box">
+        <div class="input-wrapper">
+          <input
+            type="text"
+            id="bookInput"
+            class="search-input"
+            placeholder="e.g. Harry Potter, Dune, The Alchemist..."
+            autocomplete="off"
+          />
+          <div id="autocompleteList" class="autocomplete-list hidden"></div>
+        </div>
+
+        <div class="search-controls">
+          <label for="topN" class="label">Results:</label>
+          <select id="topN" class="select-box">
+            <option value="5">5</option>
+            <option value="8" selected>8</option>
+            <option value="10">10</option>
+          </select>
+          <button id="searchBtn" class="btn-primary" onclick="getRecommendations()">
+            🔍 Recommend
+          </button>
+        </div>
+      </div>
+
+      <!-- Pipeline Badge -->
+      <div class="pipeline-badge">
+        <span class="badge">Text Cleaning</span>
+        <span class="arrow">→</span>
+        <span class="badge">Tokenization</span>
+        <span class="arrow">→</span>
+        <span class="badge">Stopword Removal</span>
+        <span class="arrow">→</span>
+        <span class="badge">Lemmatization</span>
+        <span class="arrow">→</span>
+        <span class="badge">TF-IDF</span>
+        <span class="arrow">→</span>
+        <span class="badge">Cosine Similarity</span>
+      </div>
+    </section>
+
+    <!-- ── Loader ──────────────────────────────────────── -->
+    <div id="loader" class="loader hidden">
+      <div class="spinner"></div>
+      <p>Running NLP pipeline...</p>
+    </div>
+
+    <!-- ── Error Banner ────────────────────────────────── -->
+    <div id="errorBanner" class="error-banner hidden"></div>
+
+    <!-- ── Query Book Card ─────────────────────────────── -->
+    <section id="querySection" class="hidden">
+      <h2 class="section-title">📖 You searched for</h2>
+      <div id="queryCard" class="query-card"></div>
+    </section>
+
+    <!-- ── Recommendations ─────────────────────────────── -->
+    <section id="resultsSection" class="hidden">
+      <h2 class="section-title">✨ Recommended Books</h2>
+      <div id="resultsGrid" class="results-grid"></div>
+    </section>
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────── -->
+  <footer class="footer">
+    <p>
+      Built with Python · NLTK · TF-IDF · Flask &nbsp;|&nbsp;
+      NLP Pipeline Project · 16,000+ Books
+    </p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
