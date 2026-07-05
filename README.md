@@ -209,10 +209,14 @@ That's it — you're up and running! 🎉
 
 ### 🏠 Home Page
 <img src="./images/banner.png" alt="Home Page Screenshot" width="80%" />
+
 ----
+
 ### 🔍 Search in Action
 <img src="./images/search.png" alt="Search Screenshot" width="80%" />
+
 ----
+
 ### 📚 Recommendations Result
 <img src="./images/output.png" alt="Results Screenshot" width="80%" />
 
