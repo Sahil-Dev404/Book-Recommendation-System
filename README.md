@@ -208,13 +208,13 @@ That's it — you're up and running! 🎉
 <!-- Replace the placeholders below with real screenshots -->
 
 ### 🏠 Home Page
-<img src="./static/screenshots/home.png" alt="Home Page Screenshot" width="80%" />
+<img src="./images/banner.png" alt="Home Page Screenshot" width="80%" />
 
 ### 🔍 Search in Action
-<img src="./static/screenshots/search.png" alt="Search Screenshot" width="80%" />
+<img src="./images/search.png" alt="Search Screenshot" width="80%" />
 
 ### 📚 Recommendations Result
-<img src="./static/screenshots/results.png" alt="Results Screenshot" width="80%" />
+<img src="./images/output.png" alt="Results Screenshot" width="80%" />
 
 </div>
 
