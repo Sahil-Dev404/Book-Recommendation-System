@@ -6,7 +6,7 @@
 
 <!-- 🖼️ Banner Placeholder -->
 <!-- Drop a 1280x640 banner here, e.g. static/banner.png -->
-<img src="./static/banner.png" alt="Shelf Sense Banner" width="100%" />
+<img src="./images/banner.png" alt="Shelf Sense Banner" width="100%" />
 
 <em>A content-based recommendation engine that reads between the lines — literally — using NLP to understand what makes a book *feel* like another book, then finds you more of exactly that.</em>
 
